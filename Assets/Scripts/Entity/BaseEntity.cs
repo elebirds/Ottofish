@@ -37,8 +37,8 @@ public abstract class BaseEntity : MonoBehaviour{
 
     public bool damage(float point, BaseEntity attacker)
     {
-        health -= point;
-        if (health <= 0) die();
+        this.health -= point;
+        if (this.health <= 0) die();
         return true;
     }
 
@@ -54,6 +54,6 @@ public abstract class BaseEntity : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
