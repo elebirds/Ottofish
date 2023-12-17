@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public static class EventManager
 {
@@ -58,6 +59,7 @@ public static class EventManager
 
     public static void Broadcast<T>(T evt) where T : Event
     {
+        UnityEngine.Debug.Log("event" + evt.eventName + " broadcast:" + evt);
         Type type = typeof(T);
         if (_events.TryGetValue(type, out var dict))
         {
